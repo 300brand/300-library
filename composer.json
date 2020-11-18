@@ -1,0 +1,30 @@
+{
+	"name": "threehundred/library",
+	"description": "Common library of classes to use with 300Brand sites",
+	"authors": [
+		{
+			"name": "Jake Tews",
+			"email": "jtews@300brand.com",
+			"homepage": "jake.0x54.us",
+			"role": "Developer"
+		}
+	],
+	"license": "proprietary",
+	"homepage": "https://300brand.com",
+	"require": {
+		"psr/http-message": "^1.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^9"
+	},
+	"autoload": {
+		"psr-4": {
+			"ThreeHundred\\Library\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"ThreeHundred\\Library\\Tests\\": "tests/"
+		}
+	}
+}
