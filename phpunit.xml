@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<phpunit>
+	<testsuites>
+		<testsuite name="all">
+			<directory>tests</directory>
+		</testsuite>
+	</testsuites>
+	<coverage cacheDirectory="/tmp/threehundred-library-coverage">
+		<include>
+			<directory suffix=".php">src</directory>
+		</include>
+		<exclude>
+		</exclude>
+		<report>
+			<html outputDirectory="coverage" />
+		</report>
+	</coverage>
+</phpunit>
