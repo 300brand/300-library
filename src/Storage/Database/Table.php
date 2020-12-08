@@ -27,6 +27,13 @@ class Table
         return $column;
     }
 
+    public function datetime(string $name): Column
+    {
+        $column = new Column($name, 'datetime');
+	$this->columns[] = $column;
+	return $column;
+    }
+
     public function foreignKey(
         string $localColumn,
         string $foreignTable,

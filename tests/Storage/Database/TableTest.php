@@ -36,6 +36,8 @@ class TableTest extends TestCase
             $table->text('txt');
             $table->varchar('vchar');
             $table->varchar('vchar2', 16);
+            $table->char('c', 32);
+            $table->datetime('d');
             $table->foreignKey('a', 'tbl2', 'b', 'set null', 'cascade');
             $table->index('a', 'b');
             $table->query('INSERT INTO tbl (a) VALUES ("abc")');
@@ -59,6 +61,13 @@ class TableTest extends TestCase
         $this->assertEquals('vchar2', $columns[4]->getName());
         $this->assertEquals('varchar', $columns[4]->getType());
         $this->assertEquals(16, $columns[4]->getSize());
+
+        $this->assertEquals('c', $columns[5]->getName());
+        $this->assertEquals('char', $columns[5]->getType());
+        $this->assertEquals(32, $columns[5]->getSize());
+
+        $this->assertEquals('d', $columns[6]->getName());
+        $this->assertEquals('datetime', $columns[6]->getType());
 
         $fks = $table->getForeignKeys();
         $this->assertCount(1, $fks);
