@@ -30,8 +30,8 @@ class Table
     public function datetime(string $name): Column
     {
         $column = new Column($name, 'datetime');
-	$this->columns[] = $column;
-	return $column;
+        $this->columns[] = $column;
+        return $column;
     }
 
     public function foreignKey(
