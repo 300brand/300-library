@@ -88,11 +88,22 @@ class Form implements ArrayAccess, IteratorAggregate
         }
 
         foreach ($this->uploads as $key => $upload) {
+            // Leave multifile upload processing to the implementor as there
+            // are too many edge cases to consider at this time.
+            if (is_array($upload)) {
+                continue;
+            }
+
+            // Ensure uploads are the correct instance before accessing the
+            // getError method
             if (!$upload instanceof UploadedFileInterface) {
                 throw new InvalidArgumentException(
                     'Uploads must implement ' . UploadedFileInterface::class
                 );
             }
+
+            // Not checking for UPLOAD_ERR_NO_FILE to follow the rest of the
+            // fields and default to required
             if ($upload->getError() != UPLOAD_ERR_OK) {
                 $errors[$key] = self::ERROR_MESSAGES[$upload->getError()];
             }
