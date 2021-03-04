@@ -6,7 +6,7 @@ namespace ThreeHundred\Library\Frontend;
 
 class Pagination
 {
-    private const DEFAULT_PER_PAGE = 50;
+    private const DEFAULT_PER_PAGE = 100;
 
     protected $nextLabel     = "Next";
     protected $previousLabel = "Previous";
