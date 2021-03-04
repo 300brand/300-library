@@ -6,7 +6,7 @@ namespace ThreeHundred\Library\Frontend;
 
 class Pagination
 {
-    private const DEFAULT_PER_PAGE = 100;
+    private const DEFAULT_PER_PAGE = 50;
 
     protected $nextLabel     = "Next";
     protected $previousLabel = "Previous";
@@ -187,7 +187,7 @@ class Pagination
             $html .= ' active';
         }
         $html .= '"><a href="' . $link->url() . '" class="page-link">';
-        $html .= htmlize($link->label);
+        $html .= $link->label;
         if ($link->isActive($this->getPage())) {
             $html .= ' <span class="sr-only">(current)</span>';
         }
